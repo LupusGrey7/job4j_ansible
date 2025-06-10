@@ -1,0 +1,5 @@
+# in thi file you can specify the hosts and the connection type
+local: # name of the group of hosts
+  hosts: # list of hosts
+    localhost: # name of the host in the group for which the playbook will be executed
+      ansible_connection: local # connection type to the host

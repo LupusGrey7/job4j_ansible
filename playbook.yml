@@ -1,0 +1,12 @@
+# This file is used to automate tasks on remote hosts.
+---
+- name: Install Java and Docker locally
+  hosts: local
+  remote_user: uservm # username -is you are name user, to use when connecting to the remote host
+  become: yes
+  become_user: root # you need to run the playbook as root
+  tasks: # list of tasks -Each play describes which tasks should be performed on which host or group of hosts.
+    - name: Install Java (default-jdk)
+      apt:
+        name: default-jdk
+        state: present
